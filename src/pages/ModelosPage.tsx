@@ -27,6 +27,8 @@ export function ModelosPage({ theme, onToggleTheme }: ModelosPageProps) {
   const selectedFromUrl = modeloParam ? Number(modeloParam) : null
 
   const loadDetail = useCallback(async (coSeqModelo: number) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
     setSelectedId(coSeqModelo)
     setSelectedItem(null)
     setIsDetailLoading(true)

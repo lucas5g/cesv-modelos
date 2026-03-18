@@ -1,5 +1,5 @@
 :root {
-  font-family: "JetBrains Mono", "Segoe UI", monospace;
+  font-family: "Google Sans", "Segoe UI", sans-serif;
   color: #10211b;
   background:
     radial-gradient(circle at top left, rgba(194, 224, 212, 0.75), transparent 38%),
@@ -120,7 +120,7 @@ input:focus {
 .section-header h2,
 .detail-header h2 {
   margin: 0;
-  font-family: "JetBrains Mono", "Segoe UI", monospace;
+  font-family: "Google Sans", "Segoe UI", sans-serif;
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
@@ -219,7 +219,7 @@ input:focus {
 
 .secondary-button {
   background: rgba(16, 33, 27, 0.06);
-  color: #10211b;
+  color: inherit;
 }
 
 .primary-button:hover,
@@ -323,13 +323,30 @@ input:focus {
   border: 1px solid var(--border);
   border-radius: 20px;
   background: var(--surface-strong);
+  color: inherit;
   padding: 18px;
   text-align: left;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.model-row strong {
+  color: inherit;
 }
 
 .model-row.selected {
-  border-color: rgba(20, 108, 82, 0.35);
-  background: rgba(225, 245, 237, 0.95);
+  border-color: rgba(73, 197, 154, 0.55);
+  background: linear-gradient(135deg, rgba(73, 197, 154, 0.22), rgba(140, 224, 191, 0.12));
+  box-shadow: 0 14px 30px rgba(73, 197, 154, 0.16);
+}
+
+:root[data-theme='dark'] .model-row.selected {
+  border-color: rgba(73, 197, 154, 0.72);
+  background: linear-gradient(135deg, rgba(73, 197, 154, 0.26), rgba(20, 78, 62, 0.88));
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
 }
 
 .detail-header {
